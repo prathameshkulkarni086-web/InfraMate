@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="infraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#infraGrad)" />
+  <rect x="40" y="40" width="432" height="432" rx="80" fill="none" stroke="#334155" stroke-width="4" stroke-opacity="0.5" />
+  
+  <!-- Modern Building & Crane Glyph -->
+  <g transform="translate(128, 120)">
+    <!-- Tower 1 -->
+    <rect x="24" y="96" width="64" height="160" rx="8" fill="url(#blueGrad)" />
+    <!-- Tower 2 (Main) -->
+    <rect x="104" y="40" width="80" height="216" rx="8" fill="url(#accentGrad)" />
+    <!-- Tower 3 -->
+    <rect x="200" y="128" width="56" height="128" rx="8" fill="url(#blueGrad)" opacity="0.85" />
+    <!-- Windows -->
+    <circle cx="56" cy="128" r="8" fill="#ffffff" opacity="0.9" />
+    <circle cx="56" cy="160" r="8" fill="#ffffff" opacity="0.9" />
+    <circle cx="56" cy="192" r="8" fill="#ffffff" opacity="0.9" />
+    <circle cx="56" cy="224" r="8" fill="#ffffff" opacity="0.9" />
+    
+    <circle cx="144" cy="72" r="9" fill="#ffffff" />
+    <circle cx="144" cy="104" r="9" fill="#ffffff" />
+    <circle cx="144" cy="136" r="9" fill="#ffffff" />
+    <circle cx="144" cy="168" r="9" fill="#ffffff" />
+    <circle cx="144" cy="200" r="9" fill="#ffffff" />
+    <circle cx="144" cy="232" r="9" fill="#ffffff" />
+
+    <circle cx="228" cy="160" r="8" fill="#ffffff" opacity="0.9" />
+    <circle cx="228" cy="192" r="8" fill="#ffffff" opacity="0.9" />
+    <circle cx="228" cy="224" r="8" fill="#ffffff" opacity="0.9" />
+    
+    <!-- Crane Boom -->
+    <path d="M 80 40 L 256 0" stroke="#f97316" stroke-width="8" stroke-linecap="round" />
+    <line x1="240" y1="4" x2="240" y2="48" stroke="#f97316" stroke-width="4" />
+    <rect x="232" y="48" width="16" height="16" rx="3" fill="#ffffff" />
+  </g>
+</svg>

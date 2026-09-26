@@ -1,0 +1,124 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper: Check if user is authenticated and active
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+    
+    function isAccountActive() {
+      return isAuthenticated() && 
+        (request.auth.token.status == 'active' || getUserData().status == 'active');
+    }
+    
+    // Granular Manual Permission Verifier (Checks user's explicit permissions array)
+    function hasPermission(permKey) {
+      return isAccountActive() && 
+        (
+          (request.auth.token.permissions != null && permKey in request.auth.token.permissions) ||
+          (getUserData().permissions != null && permKey in getUserData().permissions)
+        );
+    }
+    
+    function hasAnyPermission(permList) {
+      return isAccountActive() && permList.hasAny(getUserData().permissions);
+    }
+
+    // =========================================================================
+    // USERS & IAM ACCESS MANAGEMENT (Admin Controlled)
+    // =========================================================================
+    match /users/{userId} {
+      // Anyone active can read user profiles (for author names)
+      allow read: if isAccountActive();
+      // Only Admin / IAM managers can create, update, or assign permissions
+      allow create, delete: if hasPermission('manage_users');
+      allow update: if hasPermission('manage_users') || hasPermission('manage_roles_permissions');
+    }
+
+    // =========================================================================
+    // PROJECTS & PHASES
+    // =========================================================================
+    match /projects/{projectId} {
+      allow read: if hasAnyPermission(['view_projects', 'manage_projects', 'create_edit_delete_projects', 'view_dashboard']);
+      allow create, delete: if hasPermission('create_edit_delete_projects');
+      allow update: if hasAnyPermission(['manage_projects', 'create_edit_delete_projects']);
+    }
+
+    // =========================================================================
+    // EXPENSES & FINANCIAL LEDGER
+    // =========================================================================
+    match /expenses/{expenseId} {
+      allow read: if hasAnyPermission(['view_expenses', 'manage_expenses', 'create_edit_delete_expenses']);
+      allow create: if hasAnyPermission(['manage_expenses', 'create_edit_delete_expenses']);
+      allow update: if hasAnyPermission(['manage_expenses', 'create_edit_delete_expenses']);
+      allow delete: if hasPermission('create_edit_delete_expenses');
+    }
+
+    // =========================================================================
+    // MATERIALS & WAREHOUSE INVENTORY
+    // =========================================================================
+    match /materials/{materialId} {
+      allow read: if hasAnyPermission(['view_materials', 'manage_materials', 'create_edit_delete_materials']);
+      allow create, delete: if hasPermission('create_edit_delete_materials');
+      allow update: if hasAnyPermission(['manage_materials', 'create_edit_delete_materials']);
+    }
+
+    // =========================================================================
+    // WORKFORCE & MUSTER ROLL ATTENDANCE
+    // =========================================================================
+    match /workers/{workerId} {
+      allow read: if hasAnyPermission(['view_labor', 'manage_labor', 'create_edit_delete_labor']);
+      allow create, delete: if hasPermission('create_edit_delete_labor');
+      allow update: if hasAnyPermission(['manage_labor', 'create_edit_delete_labor']);
+    }
+
+    match /attendance/{attendanceId} {
+      allow read: if hasAnyPermission(['view_labor', 'manage_attendance']);
+      allow create, update: if hasPermission('manage_attendance');
+      allow delete: if hasPermission('manage_labor');
+    }
+
+    // =========================================================================
+    // SITE PROGRESS, TASKS & INSPECTION PHOTOS
+    // =========================================================================
+    match /progress_logs/{logId} {
+      allow read: if isAccountActive();
+      allow create: if hasAnyPermission(['manage_progress', 'upload_site_photos']);
+      allow update, delete: if hasPermission('manage_progress');
+    }
+
+    match /tasks/{taskId} {
+      allow read: if isAccountActive();
+      allow create, update, delete: if hasPermission('manage_progress');
+    }
+
+    // =========================================================================
+    // QUALITY INSPECTIONS & DEFECTS
+    // =========================================================================
+    match /quality_inspections/{inspectionId} {
+      allow read: if isAccountActive();
+      allow create, update: if hasAnyPermission(['manage_quality_inspections', 'upload_site_photos', 'manage_progress']);
+      allow delete: if hasPermission('manage_quality_inspections');
+    }
+
+    match /quality_defects/{defectId} {
+      allow read: if isAccountActive();
+      allow create, update: if hasAnyPermission(['manage_quality_inspections', 'upload_site_photos', 'manage_progress']);
+      allow delete: if hasPermission('manage_quality_inspections');
+    }
+
+    // =========================================================================
+    // AUDIT LOGS
+    // =========================================================================
+    match /audit_logs/{auditId} {
+      allow read: if hasPermission('manage_roles_permissions');
+      allow create: if isAuthenticated();
+      allow update, delete: if false; // Immutable audit log
+    }
+  }
+}
