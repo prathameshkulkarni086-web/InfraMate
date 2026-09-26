@@ -20,9 +20,9 @@ export const Login: React.FC<LoginProps> = ({ onRegisterClick, onForgotPasswordC
 
   const handleLocalLogin = (customEmail?: string, customName?: string, customRole?: string) => {
     loginAsLocalUser(
-      customEmail || email || 'admin@infrasync.io',
+      customEmail || email || 'admin@inframate.io',
       customName || (email ? email.split('@')[0] : 'Vikram Singhania'),
-      'InfraSync Sites',
+      'InfraMate Sites',
       customRole || 'admin'
     );
   };
@@ -86,7 +86,7 @@ export const Login: React.FC<LoginProps> = ({ onRegisterClick, onForgotPasswordC
       </div>
       
       <h2 className="text-2xl font-bold text-center text-white mb-1.5">Welcome Back</h2>
-      <p className="text-center text-slate-400 text-sm mb-5">Log in to your InfraSync workspace.</p>
+      <p className="text-center text-slate-400 text-sm mb-5">Log in to your InfraMate workspace.</p>
 
       {/* Connection Unreachable Fallback Banner */}
       {connectionError && (
@@ -192,7 +192,7 @@ export const Login: React.FC<LoginProps> = ({ onRegisterClick, onForgotPasswordC
         </div>
         <button
           type="button"
-          onClick={() => handleLocalLogin('vikram@infrasync.io', 'Vikram Singhania', 'admin')}
+          onClick={() => handleLocalLogin('vikram@inframate.io', 'Vikram Singhania', 'admin')}
           className="w-full bg-slate-800 hover:bg-slate-700/80 text-slate-200 text-xs font-medium py-2 px-3 rounded-lg transition border border-slate-700 flex items-center justify-center gap-2"
         >
           <UserCheck className="w-3.5 h-3.5 text-blue-400" />

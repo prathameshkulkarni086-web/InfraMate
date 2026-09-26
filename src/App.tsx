@@ -101,7 +101,7 @@ export default function App() {
 
   useEffect(() => {
     if (isAuthenticated && authUser) {
-      const compName = profile?.company_name || authUser.user_metadata?.company_name || 'InfraSync Sites';
+      const compName = profile?.company_name || authUser.user_metadata?.company_name || 'InfraMate Sites';
       storage.initWorkspace(authUser.id, authUser.email || '', profile?.full_name || authUser.user_metadata?.full_name || 'Admin', compName);
       // Trigger update manually after init
       const event = new Event("infrasync_storage_update");

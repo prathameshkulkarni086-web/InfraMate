@@ -49,7 +49,7 @@ export const AccessDeniedView: React.FC<AccessDeniedViewProps> = ({
           {customDescription ||
             (isAccountDisabled迷
               ? `Your account (${currentUser.email}) is marked as Inactive/Disabled by the Administrator. All database read/write actions are currently locked.`
-              : "InfraSync uses an Admin-controlled manual permission architecture. Role titles do not automatically grant module access; permissions must be explicitly assigned by the Admin.")}
+              : "InfraMate uses an Admin-controlled manual permission architecture. Role titles do not automatically grant module access; permissions must be explicitly assigned by the Admin.")}
         </p>
 
         {/* Required Permission Highlight Card */}

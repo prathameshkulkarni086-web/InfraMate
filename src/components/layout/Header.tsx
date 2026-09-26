@@ -97,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({
             I
           </div>
           <span className="font-extrabold text-sm sm:text-base text-slate-900 tracking-tight">
-            InfraSync
+            InfraMate
           </span>
         </div>
 

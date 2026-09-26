@@ -177,7 +177,7 @@ export class AttendanceService {
       const publicKeyCredentialCreationOptions: PublicKeyCredentialCreationOptions = {
         challenge,
         rp: {
-          name: "InfraSync Construction Platform",
+          name: "InfraMate Construction Platform",
           id: window.location.hostname === "localhost" ? undefined : window.location.hostname,
         },
         user: {

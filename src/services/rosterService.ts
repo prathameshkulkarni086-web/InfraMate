@@ -377,7 +377,7 @@ class RosterService {
             workerName: r.workerName,
             projectId: r.projectId,
             projectName: r.projectName,
-            title: "📅 InfraSync Roster",
+            title: "📅 InfraMate Roster",
             message: `Your shift tomorrow is:\n${r.projectName}\n${r.startTime} – ${r.endTime}\nTap to view your roster.`,
             reminderType: "ROSTER_PUBLISHED",
             url: "/?tab=labor&subtab=roster",

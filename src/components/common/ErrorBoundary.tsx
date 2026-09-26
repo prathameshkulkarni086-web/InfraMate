@@ -54,7 +54,7 @@ export class ErrorBoundary extends Component<Props, State> {
               Workspace Recovery
             </h1>
             <p className="text-slate-600 text-sm mb-6 leading-relaxed">
-              InfraSync encountered an unexpected view issue. Your project data is safely preserved.
+              InfraMate encountered an unexpected view issue. Your project data is safely preserved.
             </p>
 
             {this.state.error?.message && (

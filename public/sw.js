@@ -1,5 +1,5 @@
-// InfraSync Service Worker for Web Push & Attendance Reminders
-const CACHE_NAME = "infrasync-v1";
+// InfraMate Service Worker for Web Push & Attendance Reminders
+const CACHE_NAME = "inframate-v1";
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();
@@ -16,11 +16,11 @@ self.addEventListener("push", (event) => {
     try {
       data = event.data.json();
     } catch (e) {
-      data = { title: "InfraSync Attendance Reminder", body: event.data.text() };
+      data = { title: "InfraMate Attendance Reminder", body: event.data.text() };
     }
   }
 
-  const title = data.title || "InfraSync Attendance Reminder";
+  const title = data.title || "InfraMate Attendance Reminder";
   const options = {
     body: data.body || data.message || "Your attendance check-in is pending.",
     icon: data.icon || "/assets/icon-192.png",

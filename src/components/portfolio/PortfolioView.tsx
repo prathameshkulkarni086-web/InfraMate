@@ -97,7 +97,7 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({ projects, onSelect
             </div>
             
             <h1 className="text-3xl font-extrabold text-slate-800 mb-4 tracking-tight">
-              Welcome to InfraSync 👋
+              Welcome to InfraMate 👋
             </h1>
             <p className="text-lg text-slate-500 mb-8 max-w-lg leading-relaxed">
               Your construction workspace is ready and isolated. You haven't created any projects yet. Let's get started by creating your first site.

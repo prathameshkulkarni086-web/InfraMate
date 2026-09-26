@@ -511,6 +511,6 @@ export const pdfService = {
       margin: { left: 14, right: 14 },
     });
 
-    doc.save(`InfraSync_Project_Dossier_${project.name.substring(0, 15)}.pdf`);
+    doc.save(`InfraMate_Project_Dossier_${project.name.substring(0, 15)}.pdf`);
   },
 };

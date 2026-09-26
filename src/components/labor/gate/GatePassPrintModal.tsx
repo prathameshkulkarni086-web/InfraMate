@@ -81,7 +81,7 @@ export const GatePassPrintModal: React.FC<GatePassPrintModalProps> = ({
               </div>
               <div>
                 <h1 className="text-xl font-extrabold tracking-tight text-slate-950 uppercase">
-                  InfraSync Site Gate Movement Pass
+                  InfraMate Site Gate Movement Pass
                 </h1>
                 <p className="text-xs text-slate-600 font-semibold">
                   Official Site Security & Logistics Inward/Outward Document
@@ -312,7 +312,7 @@ export const GatePassPrintModal: React.FC<GatePassPrintModalProps> = ({
           </div>
 
           <div className="text-[9px] text-slate-400 text-center pt-4 border-t border-slate-100">
-            InfraSync Autonomous Gate Register Module • Non-transferable Gate Slip • Retain for site audit
+            InfraMate Autonomous Gate Register Module • Non-transferable Gate Slip • Retain for site audit
           </div>
         </div>
       </div>

@@ -68,7 +68,7 @@ export const AIChatSupportTab: React.FC<AIChatSupportTabProps> = ({
     {
       id: "welcome-msg",
       sender: "ai",
-      text: `Hello **${currentUser.name}**! 👋\n\nI am your **24/7 InfraSync AI Support Assistant** for **${selectedProj?.name || "your construction site"}**.\n\nI can instantly look up transactions, check material deliveries, track return requests, explain invoices, and automatically escalate unresolved queries to your assigned contractor **Gurpreet Singh**.\n\nHow can I help you today?`,
+      text: `Hello **${currentUser.name}**! 👋\n\nI am your **24/7 InfraMate AI Support Assistant** for **${selectedProj?.name || "your construction site"}**.\n\nI can instantly look up transactions, check material deliveries, track return requests, explain invoices, and automatically escalate unresolved queries to your assigned contractor **Gurpreet Singh**.\n\nHow can I help you today?`,
       timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       suggestedActions: [
         "Check status of TXN-2026-004822",
@@ -352,7 +352,7 @@ export const AIChatSupportTab: React.FC<AIChatSupportTabProps> = ({
                       <ShieldCheck className="w-3.5 h-3.5" /> Escalate to Gurpreet Singh (Contractor)
                     </button>
                     <a
-                      href={supportService.generateWhatsAppLink("+919888899999", `Hi Gurpreet Singh, escalating site issue from InfraSync AI: ${msg.escalationSummary?.issue || "Urgent site query"}`)}
+                      href={supportService.generateWhatsAppLink("+919888899999", `Hi Gurpreet Singh, escalating site issue from InfraMate AI: ${msg.escalationSummary?.issue || "Urgent site query"}`)}
                       target="_blank"
                       rel="noreferrer"
                       className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-lg transition-colors flex items-center gap-1.5 shadow-sm"
@@ -371,7 +371,7 @@ export const AIChatSupportTab: React.FC<AIChatSupportTabProps> = ({
                       key={idx}
                       onClick={() => {
                         if (action.includes("WhatsApp")) {
-                          window.open(supportService.generateWhatsAppLink("+919888899999", "Hi InfraSync Support team, I have a query regarding my construction project."), "_blank");
+                          window.open(supportService.generateWhatsAppLink("+919888899999", "Hi InfraMate Support team, I have a query regarding my construction project."), "_blank");
                         } else {
                           handleSendMessage(action);
                         }

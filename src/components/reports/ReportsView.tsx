@@ -154,7 +154,7 @@ export const ReportsView: React.FC<ReportsViewProps> = ({
                 <span className="flex items-center gap-1 text-emerald-600 font-semibold">
                   <CheckCircle2 className="h-3.5 w-3.5" /> Ready to Print
                 </span>
-                <span>Auto-signed by InfraSync Engine</span>
+                <span>Auto-signed by InfraMate Engine</span>
               </div>
             </div>
           );

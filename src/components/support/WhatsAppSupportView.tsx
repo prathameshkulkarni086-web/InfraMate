@@ -46,7 +46,7 @@ export const WhatsAppSupportView: React.FC<WhatsAppSupportViewProps> = ({
   const contractorPhone = "+919888899999";
   const supportHelpline = "+918000012345";
 
-  const defaultMessage = `*InfraSync WhatsApp Support Request*
+  const defaultMessage = `*InfraMate WhatsApp Support Request*
 • User: ${currentUser.name} (${currentUser.role})
 • Project: ${selectedProj?.name || "Active Site"}
 • Topic: ${inquiryType}
@@ -84,12 +84,12 @@ export const WhatsAppSupportView: React.FC<WhatsAppSupportViewProps> = ({
       supportService.logWhatsAppMessage({
         ticketId: "tkt-001",
         userId: "system-bot",
-        userName: "InfraSync Bot",
+        userName: "InfraMate Bot",
         phone: contractorPhone,
         projectId: selectedProj?.id || "proj-1",
         projectName: selectedProj?.name || "Active Site",
         direction: "outgoing",
-        message: `🤖 [InfraSync WhatsApp Bot] Acknowledged! Your query "${simText.slice(0, 30)}..." has been logged under Project ${selectedProj?.name || "Site"} and routed to Contractor Gurpreet Singh.`,
+        message: `🤖 [InfraMate WhatsApp Bot] Acknowledged! Your query "${simText.slice(0, 30)}..." has been logged under Project ${selectedProj?.name || "Site"} and routed to Contractor Gurpreet Singh.`,
         status: "delivered",
       });
       setLogs(supportService.getWhatsAppLogs());
@@ -106,7 +106,7 @@ export const WhatsAppSupportView: React.FC<WhatsAppSupportViewProps> = ({
               <Phone className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white">InfraSync WhatsApp Business Support Hub</h3>
+              <h3 className="text-xl font-bold text-white">InfraMate WhatsApp Business Support Hub</h3>
               <p className="text-xs text-emerald-200">
                 Direct mobile messaging connected with our 24/7 AI and assigned contractor desks
               </p>
@@ -238,7 +238,7 @@ export const WhatsAppSupportView: React.FC<WhatsAppSupportViewProps> = ({
                 }`}
               >
                 <div className="flex items-center justify-between font-bold text-[10px] text-slate-500 mb-1">
-                  <span>{log.direction === "incoming" ? `From: ${log.phone}` : "InfraSync Bot / Contractor"}</span>
+                  <span>{log.direction === "incoming" ? `From: ${log.phone}` : "InfraMate Bot / Contractor"}</span>
                   <span>{new Date(log.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
                 </div>
                 <p className="whitespace-pre-line">{log.message}</p>

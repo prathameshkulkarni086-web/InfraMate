@@ -521,7 +521,7 @@ app.post("/api/push/send", (req, res) => {
       sentAt: new Date().toISOString(),
       status: "Delivered",
       attemptCount: payload.attemptCount || 1,
-      title: payload.title || "🔔 InfraSync Reminder",
+      title: payload.title || "🔔 InfraMate Reminder",
       message: payload.message || "Your attendance action is required.",
       actionUrl: payload.actionUrl || "/?tab=labor&subtab=attendance",
       createdAt: new Date().toISOString(),
@@ -652,8 +652,8 @@ app.post("/api/reminders/process", (req, res) => {
             sentAt: new Date().toISOString(),
             status: "Delivered",
             attemptCount: checkInLogs.length + 1,
-            title: "🔔 InfraSync Attendance Reminder",
-            message: `You haven't checked in yet.\nYour shift started at ${roster.startTime}.\nOpen InfraSync to mark your attendance.`,
+            title: "🔔 InfraMate Attendance Reminder",
+            message: `You haven't checked in yet.\nYour shift started at ${roster.startTime}.\nOpen InfraMate to mark your attendance.`,
             actionUrl: "/?tab=labor&subtab=attendance",
             createdAt: new Date().toISOString(),
           };
@@ -689,7 +689,7 @@ app.post("/api/rosters/publish", (req, res) => {
         sentAt: new Date().toISOString(),
         status: "Delivered",
         attemptCount: 1,
-        title: "📅 InfraSync Roster Published",
+        title: "📅 InfraMate Roster Published",
         message: `Your shift for ${r.date} is: ${r.projectName}, ${r.startTime} – ${r.endTime}. Tap to view your roster.`,
         actionUrl: "/?tab=labor&subtab=roster",
         createdAt: new Date().toISOString(),
@@ -829,7 +829,7 @@ app.post("/api/inspections/ai-analyze", async (req, res) => {
         const mimeMatch = photoBase64.match(/^data:(image\/[a-z]+);base64,/);
         const mimeType = mimeMatch ? mimeMatch[1] : "image/jpeg";
 
-        const prompt = `You are the InfraSync Construction Quality Inspection Assistant.
+        const prompt = `You are the InfraMate Construction Quality Inspection Assistant.
 A site inspector or engineer physically captured this on-site photograph at an ongoing construction site.
 Inspection Details:
 - Category: ${category}
@@ -974,7 +974,7 @@ app.post("/api/support/ai-chat", async (req, res) => {
       return res.json(fallback);
     }
 
-    const systemPrompt = `You are the 24/7 AI Support & Transaction Assistant for InfraSync (an enterprise construction management platform).
+    const systemPrompt = `You are the 24/7 AI Support & Transaction Assistant for InfraMate (an enterprise construction management platform).
 You assist project managers, site engineers, clients, finance desks, and contractors with:
 - Transaction inquiries (purchases, payments, sales, invoices, POs, deliveries)
 - Material return requests, damaged shipments, and refund workflows
@@ -1088,7 +1088,7 @@ app.post("/api/support/escalate-to-contractor", async (req, res) => {
       returnRef: ticket?.relatedReturnNumber || ticket?.relatedReturnId,
       requestedAction: "Review and respond to site support query",
       aiResolution: "Automated retrieval of site records complete. Transferred to contractor desk.",
-      recommendedAction: "Verify material delivery / site state and acknowledge ticket in InfraSync inbox.",
+      recommendedAction: "Verify material delivery / site state and acknowledge ticket in InfraMate inbox.",
     };
 
     if (ai) {
@@ -1250,7 +1250,7 @@ ${matchedTxn.returnStatus === "Return Requested" ? "⚠️ A return claim is cur
 
   // Default response summarizing support capabilities
   return {
-    text: `Hello ${userName}! I am your **24/7 InfraSync AI Support Assistant**.\n\nI can help you with:\n1. 🔍 **Transaction Lookup**: Search any purchase, payment, sale, or invoice (e.g., *"What is status of TXN-2026-004822?"*)\n2. 🔄 **Returns & Refunds**: Track return requests and refund credits (e.g., *"Status of return RET-2026-000842"*)\n3. 🚚 **Deliveries & Materials**: Check delivery tracking for cement, steel, concrete, and electrical supplies\n4. 👷 **Contractor Escalation**: Automatically transfer unresolved queries or site disputes to contractor **Gurpreet Singh**\n5. 📱 **WhatsApp Support**: Continue any conversation seamlessly on WhatsApp\n\nHow may I assist you right now?`,
+    text: `Hello ${userName}! I am your **24/7 InfraMate AI Support Assistant**.\n\nI can help you with:\n1. 🔍 **Transaction Lookup**: Search any purchase, payment, sale, or invoice (e.g., *"What is status of TXN-2026-004822?"*)\n2. 🔄 **Returns & Refunds**: Track return requests and refund credits (e.g., *"Status of return RET-2026-000842"*)\n3. 🚚 **Deliveries & Materials**: Check delivery tracking for cement, steel, concrete, and electrical supplies\n4. 👷 **Contractor Escalation**: Automatically transfer unresolved queries or site disputes to contractor **Gurpreet Singh**\n5. 📱 **WhatsApp Support**: Continue any conversation seamlessly on WhatsApp\n\nHow may I assist you right now?`,
     confidence: 0.92,
     shouldEscalate: false,
     suggestedActions: ["View Recent Transactions", "Check Return Status", "Ask About TMT Steel", "Open WhatsApp"],
@@ -1617,13 +1617,13 @@ async function startServer() {
   server.on("error", (e) => {
     if ("code" in e && (e as any).code === "EADDRINUSE") {
       console.error('\n🚨 ERROR: Port ' + PORT + ' is already in use.');
-      console.error('🚨 Please stop any other process running on port ' + PORT + ' before starting InfraSync.\n');
+      console.error('🚨 Please stop any other process running on port ' + PORT + ' before starting InfraMate.\n');
       process.exit(1);
     }
   });
 
   server.listen(PORT, "0.0.0.0", () => {
-    console.log(`InfraSync server running on http://0.0.0.0:${PORT}`);
+    console.log(`InfraMate server running on http://0.0.0.0:${PORT}`);
   });
 }
 

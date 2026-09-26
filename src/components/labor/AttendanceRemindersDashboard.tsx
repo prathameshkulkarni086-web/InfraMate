@@ -171,8 +171,8 @@ export const AttendanceRemindersDashboard: React.FC<AttendanceRemindersDashboard
       projectId: activeProject.id,
       projectName: activeProject.name,
       reminderType: "CHECK_IN",
-      title: "🔔 InfraSync Attendance Reminder",
-      message: `You haven't checked in yet.\nYour shift started at ${shiftTime}.\nOpen InfraSync to mark your attendance.`,
+      title: "🔔 InfraMate Attendance Reminder",
+      message: `You haven't checked in yet.\nYour shift started at ${shiftTime}.\nOpen InfraMate to mark your attendance.`,
       url: "/?tab=labor&subtab=attendance",
     });
 
@@ -191,8 +191,8 @@ export const AttendanceRemindersDashboard: React.FC<AttendanceRemindersDashboard
 
     setSimulatedNotification({
       workerName: worker.name,
-      title: "🔔 InfraSync Attendance Reminder",
-      message: `You haven't checked in yet. Your shift started at ${shiftTime}. Open InfraSync to mark your attendance.`,
+      title: "🔔 InfraMate Attendance Reminder",
+      message: `You haven't checked in yet. Your shift started at ${shiftTime}. Open InfraMate to mark your attendance.`,
       time: "Just now",
       shiftTime,
     });

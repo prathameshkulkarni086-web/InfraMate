@@ -137,7 +137,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-lg text-white shadow-sm">
             I
           </div>
-          <span className="text-xl font-bold tracking-tight text-white">InfraSync</span>
+          <span className="text-xl font-bold tracking-tight text-white">InfraMate</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">

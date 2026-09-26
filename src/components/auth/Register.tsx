@@ -134,7 +134,7 @@ export const Register: React.FC<RegisterProps> = ({ onBackToLogin }) => {
       </div>
       
       <h2 className="text-2xl font-bold text-center text-white mb-1.5">Create Account</h2>
-      <p className="text-center text-slate-400 text-sm mb-5">Join InfraSync and manage your sites.</p>
+      <p className="text-center text-slate-400 text-sm mb-5">Join InfraMate and manage your sites.</p>
 
       {/* Connection Unreachable Fallback Banner */}
       {connectionError && (

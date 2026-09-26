@@ -739,7 +739,7 @@ export const LabourDirectoryView: React.FC<LabourDirectoryViewProps> = ({
                 Enable Attendance Notifications
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                InfraSync can send <strong className="text-slate-800 dark:text-slate-200">{permissionModalWorker.name}</strong> reminders directly to their registered smartphone about:
+                InfraMate can send <strong className="text-slate-800 dark:text-slate-200">{permissionModalWorker.name}</strong> reminders directly to their registered smartphone about:
               </p>
             </div>
 

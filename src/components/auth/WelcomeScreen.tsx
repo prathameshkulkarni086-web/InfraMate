@@ -10,12 +10,12 @@ export const WelcomeScreen: React.FC = () => {
   const { loginAsLocalUser } = useAuth();
 
   const handleLaunchDemo = () => {
-    loginAsLocalUser('vikram@infrasync.io', 'Vikram Singhania', 'InfraSync Sites', 'admin');
+    loginAsLocalUser('vikram@inframate.io', 'Vikram Singhania', 'InfraMate Sites', 'admin');
   };
 
   return (
     <div className="min-h-screen bg-slate-950 flex flex-col justify-center items-center relative overflow-hidden font-sans">
-      {/* Background styling to match InfraSync visual identity */}
+      {/* Background styling to match InfraMate visual identity */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-950 to-slate-950 z-0"></div>
       <div className="absolute w-[800px] h-[800px] bg-orange-500/5 rounded-full blur-[100px] -top-[400px] -left-[400px] z-0"></div>
       
@@ -27,7 +27,7 @@ export const WelcomeScreen: React.FC = () => {
               <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20">
                 <span className="text-white font-bold text-2xl">I</span>
               </div>
-              <h1 className="text-4xl font-extrabold text-white tracking-tight">InfraSync</h1>
+              <h1 className="text-4xl font-extrabold text-white tracking-tight">InfraMate</h1>
             </div>
             
             <p className="text-slate-400 text-lg mb-8 max-w-sm mx-auto">

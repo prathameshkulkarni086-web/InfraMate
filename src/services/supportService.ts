@@ -419,7 +419,7 @@ export const INITIAL_TICKETS: SupportTicket[] = [
         senderRole: "Project Manager",
         senderType: "user",
         message:
-          "Hi InfraSync AI, can you check transaction TXN-2026-004822? We received rusted TMT rebar and raised return RET-2026-000842. We need urgent replacement by Thursday.",
+          "Hi InfraMate AI, can you check transaction TXN-2026-004822? We received rusted TMT rebar and raised return RET-2026-000842. We need urgent replacement by Thursday.",
         source: "web",
         createdAt: "2026-03-01T09:45:00Z",
       },
@@ -427,7 +427,7 @@ export const INITIAL_TICKETS: SupportTicket[] = [
         id: "msg-101-2",
         ticketId: "ticket-101",
         senderId: "ai-assistant",
-        senderName: "InfraSync AI Assistant (24/7)",
+        senderName: "InfraMate AI Assistant (24/7)",
         senderRole: "AI Support",
         senderType: "ai",
         message:
@@ -440,7 +440,7 @@ export const INITIAL_TICKETS: SupportTicket[] = [
         id: "msg-101-3",
         ticketId: "ticket-101",
         senderId: "system-escalator",
-        senderName: "InfraSync Escalation Bot",
+        senderName: "InfraMate Escalation Bot",
         senderRole: "System",
         senderType: "system",
         message:
@@ -490,7 +490,7 @@ export const INITIAL_TICKETS: SupportTicket[] = [
         id: "msg-102-2",
         ticketId: "ticket-102",
         senderId: "ai-assistant",
-        senderName: "InfraSync AI Assistant (24/7)",
+        senderName: "InfraMate AI Assistant (24/7)",
         senderRole: "AI Support",
         senderType: "ai",
         message:
@@ -1090,7 +1090,7 @@ class SupportService {
       id: `msg-esc-${Date.now()}`,
       ticketId: ticket.id,
       senderId: "system-escalator",
-      senderName: "InfraSync AI Escalation Bot",
+      senderName: "InfraMate AI Escalation Bot",
       senderRole: "System",
       senderType: "system",
       message: `🔔 **Escalated to Contractor: ${contractorName}**\n\n**Issue Summary**: ${summary.issue}\n**Action Requested**: ${summary.requestedAction}\n**Recommended Resolution**: ${summary.recommendedAction}`,

@@ -29,7 +29,7 @@ export const INITIAL_USERS: User[] = [
   {
     id: "usr-admin-1",
     name: "Vikram Singhania",
-    email: "vikram@infrasync.io",
+    email: "vikram@inframate.io",
     phone: "+91 98201 54321",
     role: "admin",
     status: "active",
@@ -40,7 +40,7 @@ export const INITIAL_USERS: User[] = [
   {
     id: "usr-pm-1",
     name: "Rajesh Sharma",
-    email: "rajesh.pm@infrasync.io",
+    email: "rajesh.pm@inframate.io",
     phone: "+91 98450 12345",
     role: "project_manager",
     status: "active",
@@ -52,7 +52,7 @@ export const INITIAL_USERS: User[] = [
   {
     id: "usr-eng-1",
     name: "Ananya Desai",
-    email: "ananya.eng@infrasync.io",
+    email: "ananya.eng@inframate.io",
     phone: "+91 97110 87654",
     role: "site_engineer",
     status: "active",
@@ -64,7 +64,7 @@ export const INITIAL_USERS: User[] = [
   {
     id: "usr-sup-1",
     name: "Mohan Lal",
-    email: "mohan.sup@infrasync.io",
+    email: "mohan.sup@inframate.io",
     phone: "+91 94123 45678",
     role: "supervisor",
     status: "active",
@@ -100,7 +100,7 @@ export const INITIAL_USERS: User[] = [
   {
     id: "usr-worker-1",
     name: "Ramesh Yadav",
-    email: "ramesh.site@infrasync.io",
+    email: "ramesh.site@inframate.io",
     phone: "+91 93210 11223",
     role: "worker",
     status: "active",
@@ -1434,9 +1434,9 @@ class StorageService {
     if (this.isDemoMode) {
       return {
         id: "demo_workspace",
-        name: "InfraSync Demo Workspace",
+        name: "InfraMate Demo Workspace",
         ownerId: "usr-admin-1",
-        companyName: "InfraSync Corp (Demo)",
+        companyName: "InfraMate Corp (Demo)",
         createdAt: "2026-01-01",
       };
     }

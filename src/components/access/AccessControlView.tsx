@@ -778,7 +778,7 @@ export const AccessControlView: React.FC<AccessControlViewProps> = ({
               Two-Tier Security Architecture: UI + Database Enforcement
             </h3>
             <p className="mt-1 text-xs text-slate-600 leading-relaxed">
-              InfraSync implements manual permission enforcement at both layers to guarantee zero unauthorized access even if a client attempts to bypass the web interface:
+              InfraMate implements manual permission enforcement at both layers to guarantee zero unauthorized access even if a client attempts to bypass the web interface:
             </p>
 
             <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -1256,7 +1256,7 @@ export const AccessControlView: React.FC<AccessControlViewProps> = ({
                   <input
                     type="email"
                     required
-                    placeholder="e.g. sunil.site@infrasync.io"
+                    placeholder="e.g. sunil.site@inframate.io"
                     value={newUserForm.email}
                     onChange={(e) => setNewUserForm({ ...newUserForm, email: e.target.value })}
                     className="w-full rounded-lg bg-slate-50 px-3 py-2 text-xs text-slate-800 border border-slate-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"

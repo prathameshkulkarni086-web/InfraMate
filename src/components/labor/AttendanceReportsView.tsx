@@ -123,7 +123,7 @@ export const AttendanceReportsView: React.FC<AttendanceReportsViewProps> = ({
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `InfraSync_Attendance_${activeProject.name}_${dateRangeEnd}.csv`);
+    link.setAttribute("download", `InfraMate_Attendance_${activeProject.name}_${dateRangeEnd}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

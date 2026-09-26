@@ -25,9 +25,9 @@ export interface LocalAuthUser {
 
 const DEFAULT_LOCAL_USER: LocalAuthUser = {
   id: "usr-admin-1",
-  email: "vikram@infrasync.io",
+  email: "vikram@inframate.io",
   name: "Vikram Singhania",
-  company: "InfraSync Sites",
+  company: "InfraMate Sites",
   role: "admin",
   createdAt: "2026-01-10",
 };
@@ -145,7 +145,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       id,
       email: email.trim().toLowerCase(),
       name: name.trim() || 'Workspace User',
-      company: company?.trim() || 'InfraSync Sites',
+      company: company?.trim() || 'InfraMate Sites',
       role: role || 'admin',
       createdAt: new Date().toISOString(),
     };

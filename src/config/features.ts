@@ -1,5 +1,5 @@
 /**
- * InfraSync Feature Configuration & Flags
+ * InfraMate Feature Configuration & Flags
  * 
  * Centralized feature flags for toggling optional or temporarily disabled modules.
  * Set `visualizer2D3D` to `true` to immediately restore 2D / 3D Visualizer navigation,
